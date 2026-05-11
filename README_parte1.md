@@ -34,7 +34,7 @@ const PetSchema = {
   idade: "number",    // Idade aproximada do pet em anos
   tutor_id: "number"  // Identificador do tutor responsável pelo pet
 };
-
+```
 
 
 
@@ -43,7 +43,7 @@ const PetSchema = {
 
 
 
-
+```
 const tutores = [
   {
     id: 1,
@@ -70,10 +70,10 @@ const tutores = [
     email: "rafael.martins@email.com"
   }
 ];
+```
 
 
-
-
+```
 const pets = [
   {
     nome: "Thor",
@@ -104,3 +104,39 @@ const pets = [
     tutor_id: 4
   }
 ];
+```
+
+
+## Parte 3 - Interface 
+
+A interface foi implementada em React no arquivo `App.jsx`, utilizando componentes funcionais e dados mockados das entidades **Tutor** e **Pet**.
+
+### Componentes criados
+
+#### `PerfilTutor`
+
+Responsável por exibir os dados do tutor responsável pelo pet selecionado.  
+Consome dados da entidade **Tutor**, recebidos por props, como `nome`, `telefone` e `email`.
+
+#### `PerfilPet`
+
+Responsável por exibir os dados do pet selecionado e apresentar ações relacionadas ao animal, como agendar consulta, registrar vacinação e visualizar histórico.  
+Consome dados da entidade **Pet**, recebidos por props, como `nome`, `especie`, `raca`, `idade` e `tutor_id`.
+
+#### `ListaPets`
+
+Responsável por listar os pets cadastrados em formato de cards. Permite selecionar um pet para visualizar seus detalhes.  
+Consome o array mockado de **Pets** e também utiliza o array de **Tutores** para mostrar o nome do tutor responsável.
+
+#### `FormularioPet`
+
+Responsável por exibir um formulário visual para cadastro de um novo pet.  
+Consome os dados mockados de **Tutores** para preencher o campo de seleção do tutor responsável. O formulário não persiste os dados, mas exibe uma mensagem de sucesso após a submissão.
+
+### Gerenciamento de estado
+
+A aplicação utiliza `useState` para controlar o pet selecionado, os campos do formulário e as mensagens de feedback exibidas ao usuário.
+
+### Biblioteca de CSS utilizada
+
+A biblioteca escolhida foi o **Tailwind CSS**, pois permite estilizar a interface diretamente por classes utilitárias, facilitando a criação de uma tela organizada, responsiva e visualmente consistente. Além disso, atende ao requisito da atividade sem utilizar bibliotecas de componentes prontos, como Material UI ou Chakra UI.
